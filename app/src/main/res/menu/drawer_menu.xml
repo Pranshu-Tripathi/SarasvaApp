@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_home_bg_red">
+        </item>
+        <item
+            android:id="@+id/event"
+            android:title="Events"
+            android:icon="@drawable/ic_event__bg_red">
+        </item>
+        <item
+            android:id="@+id/writeups"
+            android:title="Blog"
+            android:icon="@drawable/ic_create_bg_red">
+        </item>
+    </group>
+    <item android:title="About">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:title="Coordinators"
+                    android:id="@+id/cordi"
+                    android:icon="@drawable/ic_person_black_24dp">
+                </item>
+                <item
+                    android:title="Members"
+                    android:id="@+id/members"
+                    android:icon="@drawable/ic_person_outline_black_24dp">
+                </item>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Follow Us:">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:title="sarasva.society@iiita.ac.in"
+                    android:id="@+id/mail"
+                    android:icon="@drawable/ic_email_black_24dp">
+                </item>
+                <item
+                    android:title="Instagram"
+                    android:id="@+id/instagram"
+                    android:icon="@drawable/ic_instagram">
+                </item>
+                <item
+                    android:title="Facebook"
+                    android:id="@+id/facebook"
+                    android:icon="@drawable/ic_facebook">
+                </item>
+                <item
+                    android:title="Twitter"
+                    android:id="@+id/tweeter"
+                    android:icon="@drawable/ic_twitter">
+                </item>
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Communication">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:title="Share"
+                    android:id="@+id/share"
+                    android:icon="@drawable/ic_share_black_24dp">
+                </item>
+                <item
+                    android:title="Rate Us!"
+                    android:id="@+id/rating"
+                    android:icon="@drawable/ic_rate_review_black_24dp">
+                </item>
+            </group>
+        </menu>
+    </item>
+
+</menu>
