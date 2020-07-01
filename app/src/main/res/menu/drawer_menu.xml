@@ -44,17 +44,17 @@
                     android:icon="@drawable/ic_email_black_24dp">
                 </item>
                 <item
-                    android:title="Instagram"
+                    android:title="Instagram Page"
                     android:id="@+id/instagram"
                     android:icon="@drawable/ic_instagram">
                 </item>
                 <item
-                    android:title="Facebook"
+                    android:title="Facebook Page"
                     android:id="@+id/facebook"
                     android:icon="@drawable/ic_facebook">
                 </item>
                 <item
-                    android:title="Twitter"
+                    android:title="Twitter Handle"
                     android:id="@+id/tweeter"
                     android:icon="@drawable/ic_twitter">
                 </item>

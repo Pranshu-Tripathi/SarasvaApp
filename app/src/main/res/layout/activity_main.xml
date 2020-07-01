@@ -17,8 +17,8 @@
         <ImageView
             android:id="@+id/sarasvaLogo"
             android:layout_width="226dp"
-            android:layout_height="204dp"
-            android:layout_marginEnd="16dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="1dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.6" />
+            app:layout_constraintGuide_percent="0.75" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -56,10 +56,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@drawable/btnevents"
+            android:fontFamily="@font/almendra_display"
             android:text="EVENTS"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:background="@drawable/btnevents"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3" />
@@ -70,6 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="About Sarasva"
+            android:onClick="aboutSarasva"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
