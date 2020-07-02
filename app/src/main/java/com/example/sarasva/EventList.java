@@ -33,7 +33,7 @@ public class EventList extends AppCompatActivity {
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
-        adaptor = new EventAdaptor(images);
+        adaptor = new EventAdaptor(EventList.this,images);
         recyclerView.setAdapter(adaptor);
         adaptor.notifyDataSetChanged();
 

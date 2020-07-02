@@ -1,5 +1,7 @@
 package com.example.sarasva;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +12,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.yinglan.shadowimageview.ShadowImageView;
+
 public class EventAdaptor extends RecyclerView.Adapter<EventAdaptor.ImageViewHolder> {
 
     private int[] images;
+    private Context context;
 
-    public EventAdaptor(int[] images){
+    public EventAdaptor(Context context1,int[] images){
         this.images = images;
+        this.context = context1;
     }
 
     @NonNull
@@ -38,15 +44,23 @@ public class EventAdaptor extends RecyclerView.Adapter<EventAdaptor.ImageViewHol
             @Override
             public void onClick(View v) {
                 if(image_id == R.drawable.tedx){
-
+                    Intent intent = new Intent(context,TedxActivity.class);
+                    context.startActivity(intent);
                 }else if(image_id == R.drawable.mun){
-
+                    Intent intent = new Intent(context,TedxActivity.class);
+                    context.startActivity(intent);
                 }else if(image_id == R.drawable.kavi){
-
+                    Intent intent = new Intent(context,TedxActivity.class);
+                    context.startActivity(intent);
                 }else if(image_id == R.drawable.cognoscentia){
-
+                    Intent intent = new Intent(context,TedxActivity.class);
+                    context.startActivity(intent);
                 }else if(image_id == R.drawable.litathon){
-
+                    Intent intent = new Intent(context,TedxActivity.class);
+                    context.startActivity(intent);
+                }else if(image_id == R.drawable.brainbrawl){
+                    Intent intent = new Intent(context,TedxActivity.class);
+                    context.startActivity(intent);
                 }
             }
         });
