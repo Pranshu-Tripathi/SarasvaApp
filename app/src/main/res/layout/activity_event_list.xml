@@ -6,14 +6,154 @@
     android:layout_height="match_parent"
     tools:context=".EventList">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerEvents"
-        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layoutAnimation="@anim/layout_animation_fall_down"/>
+        android:background="#000">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+            <com.synnapps.carouselview.CarouselView
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:id="@+id/cv"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                app:strokeColor="#EF5959"
+                app:fillColor="#FFFFFF"
+                app:radius="2dp"
+                app:slideInterval="3000"
+                app:strokeWidth="1dp">
+            </com.synnapps.carouselview.CarouselView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:columnCount="1"
+
+                android:rowCount="7">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:id="@+id/btntedX"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="#000"
+                    android:fontFamily="@font/almendra_display"
+                    android:text="TEDX"
+                    android:textColor="#EF5959"
+                    android:textSize="32sp"
+                    android:textStyle="bold"></Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:id="@+id/btnmun"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="#000"
+                    android:fontFamily="@font/almendra_display"
+                    android:text="MUN"
+                    android:textColor="#EF5959"
+                    android:textSize="32sp"
+                    android:textStyle="bold"></Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:id="@+id/btnkavi"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="#000"
+                    android:fontFamily="@font/almendra_display"
+                    android:text="Kavi Sammelen"
+                    android:textColor="#EF5959"
+                    android:textSize="32sp"
+                    android:textStyle="bold"></Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:id="@+id/btncognosentia"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="#000"
+                    android:fontFamily="@font/almendra_display"
+                    android:text="Cognosectia"
+                    android:textColor="#EF5959"
+                    android:textSize="32sp"
+                    android:textStyle="bold"></Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="4"
+                    android:id="@+id/btnlitathon"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="#000"
+                    android:fontFamily="@font/almendra_display"
+                    android:text="Lit-A-Thon"
+                    android:textColor="#EF5959"
+                    android:textSize="32sp"
+                    android:textStyle="bold"></Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="5"
+                    android:id="@+id/btnbrainbrawl"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="#000"
+                    android:fontFamily="@font/almendra_display"
+                    android:text="Brain Brawl"
+                    android:textColor="#EF5959"
+                    android:textSize="32sp"
+                    android:textStyle="bold"></Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="6"
+                    android:id="@+id/btnfeathers"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="#000"
+                    android:fontFamily="@font/almendra_display"
+                    android:text="Feathers"
+                    android:textColor="#EF5959"
+                    android:textSize="32sp"
+                    android:textStyle="bold"></Button>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
