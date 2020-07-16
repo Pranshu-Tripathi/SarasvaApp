@@ -4,11 +4,147 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/scrollViewFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Registration Page"
+                android:textSize="32dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/almendra_display"
+                android:textStyle="bold"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/input_edit_text"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_person_black_24dp"/>
+                <EditText
+                    android:id="@+id/nameApplicant"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Name"
+                    android:background="@drawable/input_edit_text"
+                    android:paddingLeft="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/input_edit_text"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_email_black_24dp"/>
+                <EditText
+                    android:id="@+id/mailApplicant"
+                    android:inputType="textEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Email ID"
+                    android:background="@drawable/input_edit_text"
+                    android:paddingLeft="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/input_edit_text"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_local_phone"/>
+                <EditText
+                    android:id="@+id/contactApplicant"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Contact Number"
+                    android:background="@drawable/input_edit_text"
+                    android:paddingLeft="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Modes (Only One):-"
+                    android:textColor="#000000"/>
+                <CheckBox
+                    android:id="@+id/checkboxPayTm"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:buttonTint="#ef5959"
+                    android:text="PayTm 9373902008"/>
+
+                <CheckBox
+                    android:id="@+id/checkboxPhonePay"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#ef5959"
+                    android:text="PhonePay 9373902008"/>
+
+                <CheckBox
+                    android:id="@+id/checkboxCash"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#ef5959"
+                    android:text="Cash Payment"/>
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btnevents"
+                android:fontFamily="@font/almendra_display"
+                android:text="Register"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_marginTop="1000dp"
+                android:textAlignment="center"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Data Has Been Saved"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
