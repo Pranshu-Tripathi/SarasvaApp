@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sarasva">
 
-    <uses-sdk
-        android:targetSdkVersion="29"
-        tools:ignore="GradleOverrides" />
+    <uses-permission
+        android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +16,7 @@
         <activity android:name=".aboutSarasva" />
         <activity
             android:name=".MainActivity"
-            android:hardwareAccelerated="true">
+            android:hardwareAccelerated="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

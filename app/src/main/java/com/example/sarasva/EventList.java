@@ -53,6 +53,7 @@ public class EventList extends AppCompatActivity {
         carouselView.setImageListener(imageListener);
 
         gridView = findViewById(R.id.gridview);
+
         CustomAdaptor customAdaptor = new CustomAdaptor();
         gridView.setAdapter(customAdaptor);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

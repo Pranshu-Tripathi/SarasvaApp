@@ -31,7 +31,6 @@ public class RegisterFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register, container, false);
 
-
         scrollView = view.findViewById(R.id.scrollViewFragment);
         Name = view.findViewById(R.id.nameApplicant);
         Mail = view.findViewById(R.id.mailApplicant);

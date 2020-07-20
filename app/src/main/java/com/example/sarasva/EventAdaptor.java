@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.yinglan.shadowimageview.ShadowImageView;
+
 
 public class EventAdaptor extends RecyclerView.Adapter<EventAdaptor.ImageViewHolder> {
 

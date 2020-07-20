@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "497919415989",
+    "firebase_url": "https://sarasva-iiita.firebaseio.com",
+    "project_id": "sarasva-iiita",
+    "storage_bucket": "sarasva-iiita.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497919415989:android:e117770d4685d98b9d90fc",
+        "android_client_info": {
+          "package_name": "com.example.sarasva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497919415989-af6db5p1rq3pln38oq7jdshhbkhtm3iv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sarasva",
+            "certificate_hash": "e6dc4658afba94f258f918ffaf439a153c03116c"
+          }
+        },
+        {
+          "client_id": "497919415989-gi4ealkrldn9au446ertci54j2gmb09l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB3I_2VnYnypSYy8O-tq-iMFWlnX5JmbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497919415989-gi4ealkrldn9au446ertci54j2gmb09l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

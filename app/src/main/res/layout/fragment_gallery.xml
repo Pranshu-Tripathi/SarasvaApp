@@ -3,12 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".GalleryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <GridView
+        android:id="@+id/gridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:numColumns="2">
 
+    </GridView>
+
+    <ProgressBar
+        android:id="@+id/pbaar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FDFAFA"
+        android:backgroundTint="@color/colorPrimary"
+        android:progressBackgroundTint="#EF5959"
+        />
 </FrameLayout>
