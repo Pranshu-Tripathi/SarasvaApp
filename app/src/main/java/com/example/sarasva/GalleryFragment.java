@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 
@@ -47,9 +48,83 @@ public class GalleryFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_gallery, container, false);
 
+
+//        urls = new ArrayList<>();
+//        progressBar = v.findViewById(R.id.pbaar);
+//        gridView = v.findViewById(R.id.gridView);
+//        reference = FirebaseDatabase.getInstance().getReference()
+//                .child("Sarasva")
+//                .child("Events")
+//                .child("TedX")
+//                .child("Gallery");
+//
+//        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+//                    if(dataSnapshot1.exists()){
+//                        urls.add(dataSnapshot1.getValue(String.class));
+//                        Log.i("Data URL", Objects.requireNonNull(dataSnapshot1.getValue()).toString());
+//                    }
+//                }
+//                ga = new GalleryAdaptor(getContext(),urls);
+//                gridView.setAdapter(ga);
+//                ga.notifyDataSetChanged();
+//                // 5 Seconds Delay to the Progress Bar
+//                Handler handler = new Handler();
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        progressBar.setVisibility(View.INVISIBLE);
+//                    }
+//                },5000);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(getContext(), "Error in Downloading URLS!!!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+        return v;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         urls = new ArrayList<>();
-        progressBar = v.findViewById(R.id.pbaar);
-        gridView = v.findViewById(R.id.gridView);
+        progressBar = view.findViewById(R.id.pbaar);
+        gridView = view.findViewById(R.id.gridView);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        try {
+            getGalleryData();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getGalleryData() throws InterruptedException {
+
+        new Thread(){
+            @Override
+            public void run(){
+                runYourBackgroundTaskHere();
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+    }
+
+    private void runYourBackgroundTaskHere(){
+
         reference = FirebaseDatabase.getInstance().getReference()
                 .child("Sarasva")
                 .child("Events")
@@ -84,8 +159,6 @@ public class GalleryFragment extends Fragment {
             }
         });
 
-        return v;
     }
-
 
 }
