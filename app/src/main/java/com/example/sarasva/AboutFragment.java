@@ -115,7 +115,7 @@ public class AboutFragment extends Fragment {
 
         List<String> ans1 = new ArrayList<>();
         ans1.add("TED Conferences LLC (Technology, Entertainment, Design) is an American media organization that posts talks online for free distribution under the slogan \"ideas worth spreading\". TED was conceived by Richard Saul Wurman in February 1984 as a conference; it has been held annually since 1990. The main TED conference is held annually in Vancouver, British Columbia, Canada at the Vancouver Convention Centre. Prior to 2014, the conference was held in Long Beach, California, United States.TED events are also held throughout North America and in Europe, Asia, and Africa, offering live streaming of the talks");
-
+        listHashMap.put(listDataHeader.get(0),ans1);
         List<String> ans2 = new ArrayList<>();
         ans2.add("The difference between TED and TEDx events are that the former takes more of a global approach while the latter typically focuses on a local community that concentrates on local voices. “Officially, the ‘x’ in TEDx stands for independently organized TED event – but it’s more of a TED multiplied.");
 
@@ -135,7 +135,7 @@ public class AboutFragment extends Fragment {
                 "A collaboration of, for and by tech enthusiasts, Aparoksha is a platform for technocrats to code, design and build innovative solutions to transform India into a digitally empowered society and a knowledge based economy, all while providing a venue for self-expression and creativity.");
 
 
-        listHashMap.put(listDataHeader.get(0),ans1);
+
         listHashMap.put(listDataHeader.get(1),ans2);
         listHashMap.put(listDataHeader.get(2),ans3);
         listHashMap.put(listDataHeader.get(3),ans4);

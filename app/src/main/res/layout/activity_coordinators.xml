@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context=".CoordinatorsActivity">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coordinators"
+        android:textColor="@color/backRed"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:fontFamily="@font/almendra_display"
+        android:textStyle="bold"/>
+
+    <ExpandableListView
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:id="@+id/exp_lst_cordi"
+        android:groupIndicator="@null"
+        android:dividerHeight="5dp"
+        android:layout_height="match_parent"/>
+    <ProgressBar
+        android:id="@+id/loading_cordi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-400dp"/>
+</LinearLayout>

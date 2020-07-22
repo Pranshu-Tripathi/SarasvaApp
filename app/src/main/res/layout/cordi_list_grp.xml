@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@drawable/bg_cordi_header"
+    android:gravity="center|start"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_Pic_Header"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/profileimg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/cordi_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giriraj Chandak"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/cordi_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="III Year B.Tech IT"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="italic"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>

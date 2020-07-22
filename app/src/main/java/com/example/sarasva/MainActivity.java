@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.cordi:
                 Toast.makeText(this, "Coordinators Selected", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawer(GravityCompat.START);
+                Intent intent3 = new Intent(MainActivity.this,CoordinatorsActivity.class);
+                startActivity(intent3);
                 return true;
             case R.id.members:
                 Toast.makeText(this, "Members Selected", Toast.LENGTH_SHORT).show();
