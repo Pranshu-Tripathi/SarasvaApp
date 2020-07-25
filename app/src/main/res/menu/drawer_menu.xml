@@ -22,14 +22,14 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:title="Coordinators"
+                    android:title="Contact Us"
                     android:id="@+id/cordi"
-                    android:icon="@drawable/ic_person_black_24dp">
+                    android:icon="@drawable/ic_local_phone">
                 </item>
                 <item
-                    android:title="Members"
+                    android:title="Team"
                     android:id="@+id/members"
-                    android:icon="@drawable/ic_person_outline_black_24dp">
+                    android:icon="@drawable/ic_person_black_24dp">
                 </item>
             </group>
         </menu>

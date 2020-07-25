@@ -87,12 +87,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent3);
                 return true;
             case R.id.members:
-                Toast.makeText(this, "Members Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Team Selected", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawer(GravityCompat.START);
+                Intent intent4 = new Intent(MainActivity.this,TeamActivity.class);
+                startActivity(intent4);
                 return true;
             case R.id.mail:
                 Toast.makeText(this, "Mail Selected", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawer(GravityCompat.START);
+                Intent intent5 = new Intent (Intent.ACTION_VIEW , Uri.parse("mailto:" +"sarasva.society@iiita.ac.in"));
+                intent5.putExtra(Intent.EXTRA_SUBJECT, "your_subject");
+                intent5.putExtra(Intent.EXTRA_TEXT, "your_text");
+                startActivity(intent5);
                 return true;
             case R.id.instagram:
                 Toast.makeText(this, "Instagram Selected", Toast.LENGTH_SHORT).show();
