@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -32,7 +33,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TeamActivity extends AppCompatActivity {
 
-    private GridView gridViewCoordinators,gridViewMembers,gridViewSeniors;
+    private ExpandableHeightGridView gridViewCoordinators,gridViewMembers,gridViewSeniors;
     private DatabaseReference cordiReference;
     private DatabaseReference memberReference;
     private DatabaseReference seniorReference;
@@ -51,7 +52,7 @@ public class TeamActivity extends AppCompatActivity {
 
 
 
-    private ProgressBar progressBarCordi,progressBarMember,progressBarSenior;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -59,13 +60,11 @@ public class TeamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team);
 
-        gridViewCoordinators = (GridView) findViewById(R.id.coordinatorGridView);
-        gridViewMembers = (GridView) findViewById(R.id.membersGridView);
-        gridViewSeniors = (GridView) findViewById(R.id.membersGridViewSenior);
+        gridViewCoordinators = (ExpandableHeightGridView) findViewById(R.id.coordinatorGridView);
+        gridViewMembers = (ExpandableHeightGridView) findViewById(R.id.membersGridView);
+        gridViewSeniors = (ExpandableHeightGridView) findViewById(R.id.membersGridViewSenior);
 
-        progressBarCordi = (ProgressBar) findViewById(R.id.progress_bar_cordi);
-        progressBarMember = (ProgressBar) findViewById(R.id.progress_bar_members);
-        progressBarSenior = (ProgressBar) findViewById(R.id.progress_bar_members_senior);
+        progressBar = (ProgressBar) findViewById(R.id.progress);
 
         cordi_names = new ArrayList<>();
         cordi_imgUrl = new ArrayList<>();
@@ -105,7 +104,8 @@ public class TeamActivity extends AppCompatActivity {
                 CordiTeam cordiTeam = new CordiTeam();
                 gridViewCoordinators.setAdapter(cordiTeam);
                 cordiTeam.notifyDataSetChanged();
-                progressBarCordi.setVisibility(View.INVISIBLE);
+                gridViewCoordinators.setExpanded(true);
+
             }
 
             @Override
@@ -176,7 +176,7 @@ public class TeamActivity extends AppCompatActivity {
                 SeniorMembers seniorMembers = new SeniorMembers();
                 gridViewSeniors.setAdapter(seniorMembers);
                 seniorMembers.notifyDataSetChanged();
-                progressBarSenior.setVisibility(View.INVISIBLE);
+                gridViewSeniors.setExpanded(true);
             }
 
             @Override
@@ -247,8 +247,14 @@ public class TeamActivity extends AppCompatActivity {
                 MemberTeam memberTeam = new MemberTeam();
                 gridViewMembers.setAdapter(memberTeam);
                 memberTeam.notifyDataSetChanged();
-                progressBarMember.setVisibility(View.INVISIBLE);
-
+                gridViewMembers.setExpanded(true);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
+                },5000);
             }
 
             @Override
@@ -281,7 +287,7 @@ public class TeamActivity extends AppCompatActivity {
 
                 name_pop.setText(members_names.get(position));
                 enroll_pop.setText(members_enroll.get(position));
-                status_pop.setText("Members");
+                status_pop.setText("Member");
                 email_pop.setText(members_enroll.get(position).toLowerCase().trim()+"@iiita.ac.in");
 
                 close_pop.setOnClickListener(new View.OnClickListener() {

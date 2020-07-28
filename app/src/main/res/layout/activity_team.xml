@@ -16,15 +16,32 @@
             android:padding="10dp"
             android:orientation="vertical"
             >
-            <TextView
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="The Team"
-                android:textAlignment="center"
-                android:textSize="36sp"
-                android:textColor="@color/backRed"
-                android:fontFamily="@font/almendra_display"
-                android:textStyle="bold"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The Team"
+                    android:textAlignment="center"
+                    android:textSize="36sp"
+                    android:layout_weight="5"
+                    android:textColor="@color/backRed"
+                    android:fontFamily="@font/almendra_display"
+                    android:textStyle="bold"/>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginEnd="10dp"
+                    >
+                </ProgressBar>
+            </LinearLayout>
 
             <TextView
                 android:layout_marginTop="20dp"
@@ -40,24 +57,19 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/bg_cordi_linera_layout_team_page"
                 android:padding = "10dp"
                 >
-                <GridView
+                <com.example.sarasva.ExpandableHeightGridView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:numColumns="3"
                     android:id="@+id/coordinatorGridView"/>
-                <ProgressBar
-                    android:id="@+id/progress_bar_cordi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-120dp"/>
+
             </LinearLayout>
 
 
@@ -74,23 +86,19 @@
                 android:text="Senior Members"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="330dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/bg_cordi_linera_layout_team_page"
                 android:padding = "10dp">
-                <GridView
+                <com.example.sarasva.ExpandableHeightGridView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:numColumns="3"
-                    android:id="@+id/membersGridViewSenior"/>
-                <ProgressBar
-                    android:id="@+id/progress_bar_members_senior"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-100dp"/>
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth"
+                    android:id="@+id/membersGridViewSenior"/>
+
             </LinearLayout>
 
             <TextView
@@ -113,20 +121,15 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/bg_cordi_linera_layout_team_page"
                 android:padding = "10dp">
-                <GridView
+                <com.example.sarasva.ExpandableHeightGridView
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
+                    android:layout_height="wrap_content"
                     android:numColumns="3"
                     android:id="@+id/membersGridView"/>
-                <ProgressBar
-                    android:id="@+id/progress_bar_members"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-450dp"/>
             </LinearLayout>
 
 
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
+
