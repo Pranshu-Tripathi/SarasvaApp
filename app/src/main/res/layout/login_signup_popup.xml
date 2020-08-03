@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="410dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:backgroundTint="@color/colorPrimary"
+    android:background="@drawable/grid_icon_team_design">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGIN !"
+            android:textColor="@color/backRed"
+            android:textSize="36sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="If already have an account proceed here."
+            android:textColor="#ffffff"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/loginBlog"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btnevents"
+            android:text="Login !"
+            android:textSize="22sp"
+            android:fontFamily="@font/almendra_display"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@drawable/close_bg"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignUp!"
+            android:textColor="@color/backRed"
+            android:textSize="36sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Account if Doesn't Exist"
+            android:textColor="#ffffff"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/signUpBlog"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btnevents"
+            android:text="SignUp!"
+            android:textSize="22sp"
+            android:fontFamily="@font/almendra_display"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +42,6 @@ public class TeamActivity extends AppCompatActivity {
     private List<String> cordi_imgUrl;
     private List<String> cordi_enroll;
     private Dialog dialog;
-
     private List<String> members_names;
     private List<String> members_imgUrl;
     private List<String> members_enroll;

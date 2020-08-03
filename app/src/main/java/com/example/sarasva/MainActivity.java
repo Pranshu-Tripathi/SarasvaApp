@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.writeups:
                 Toast.makeText(this, "Blog Selected", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawer(GravityCompat.START);
+                Intent intent6 = new Intent(MainActivity.this,BlogingActivity.class);
+                startActivity(intent6);
                 return true;
             case R.id.cordi:
                 Toast.makeText(this, "Coordinators Selected", Toast.LENGTH_SHORT).show();
