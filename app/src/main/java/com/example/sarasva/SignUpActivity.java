@@ -25,20 +25,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
-import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
+import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -49,8 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private ProgressBar progressBar;
-    private CircleImageView ProfileImage;
-    private FirebaseStorage storage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +54,17 @@ public class SignUpActivity extends AppCompatActivity {
         passwordUser = findViewById(R.id.passwordUserBlog);
         SignUpButton = findViewById(R.id.btnSignUp);
         progressBar = findViewById(R.id.signUpProgress);
-        ProfileImage = findViewById(R.id.UserPhoto);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
-        reference = FirebaseDatabase.getInstance().getReference();
+        reference = FirebaseDatabase.getInstance().getReference()
+                .child("Sarasva")
+                .child("Users")
+                .child("Profile");
 
         progressBar.setVisibility(View.INVISIBLE);
 
-        storage = FirebaseStorage.getInstance();
+
 
         SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,13 +77,14 @@ public class SignUpActivity extends AppCompatActivity {
                     AuthenticateUser();
 
 
-
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             progressBar.setVisibility(View.INVISIBLE);
                             Intent intent = new Intent(SignUpActivity.this,BlogingActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }
                     },5000);
@@ -97,27 +92,6 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
-
-        ProfileImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent galleryIntent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(galleryIntent,1);
-            }
-        });
-
-
-    }
-
-
-    private void AddUser(){
-
-
-
-
-
-
-
 
     }
 
@@ -130,6 +104,20 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(SignUpActivity.this, "Authentication Successful!\nPlease Wait!", Toast.LENGTH_SHORT).show();
                         firebaseUser = firebaseAuth.getCurrentUser();
+                        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                dataSnapshot.getRef().child(firebaseUser.getUid()).child("name").setValue(nameUser.getText().toString());
+                                dataSnapshot.getRef().child(firebaseUser.getUid()).child("mailId").setValue(emailUser.getText().toString().toLowerCase().trim());
+                                dataSnapshot.getRef().child(firebaseUser.getUid()).child("contact").setValue(contactNumberUser.getText().toString());
+                                dataSnapshot.getRef().child(firebaseUser.getUid()).child("profileImg").setValue("NONE");
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                Log.i("Issue In Addition",databaseError.getMessage().toString());
+                            }
+                        });
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -142,24 +130,6 @@ public class SignUpActivity extends AppCompatActivity {
                 });
     }
 
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1){
-            if(resultCode == Activity.RESULT_OK){
-                if(data == null){
-                    Toast.makeText(this, "Data NULL", Toast.LENGTH_SHORT).show();
-                }else{
-                    Uri imageUri = data.getData();
-                    ProfileImage.setImageURI(imageUri);
-
-
-                }
-            }
-        }
-    }
 }
 
 

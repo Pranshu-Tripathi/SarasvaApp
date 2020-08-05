@@ -26,7 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Sign Up!"
+                    android:text="Login!"
                     android:textSize="32sp"
                     android:textColor="@color/backRed"
                     android:textAlignment="center"
@@ -35,34 +35,12 @@
                     android:textStyle="bold"/>
 
                 <ProgressBar
-                    android:id="@+id/signUpProgress"
+                    android:id="@+id/signInProgress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/input_edit_text"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="16dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_person_black_24dp"/>
-                <EditText
-                    android:id="@+id/nameUserBlog"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Name"
-                    android:inputType="text"
-                    android:marqueeRepeatLimit="23"
-                    android:background="@drawable/input_edit_text"
-                    android:paddingLeft="12dp"/>
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -77,7 +55,7 @@
                     android:layout_height="50dp"
                     android:src="@drawable/ic_email_black_24dp"/>
                 <EditText
-                    android:id="@+id/mailUserBlog"
+                    android:id="@+id/mailUserBlogLogin"
                     android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -86,28 +64,6 @@
                     android:paddingLeft="12dp"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/input_edit_text"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="16dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_local_phone"/>
-                <EditText
-                    android:id="@+id/contactUserBlog"
-                    android:inputType="number"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Contact Number"
-                    android:background="@drawable/input_edit_text"
-                    android:paddingLeft="12dp"/>
-
-            </LinearLayout>
 
 
             <LinearLayout
@@ -123,7 +79,7 @@
                     android:layout_height="50dp"
                     android:src="@drawable/ic_password"/>
                 <EditText
-                    android:id="@+id/passwordUserBlog"
+                    android:id="@+id/passwordUserBlogLogin"
                     android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -135,13 +91,13 @@
 
 
             <Button
-                android:id="@+id/btnSignUp"
+                android:id="@+id/btnLogin"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/btnevents"
                 android:fontFamily="@font/almendra_display"
-                android:text="SignUp"
+                android:text="Login"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
