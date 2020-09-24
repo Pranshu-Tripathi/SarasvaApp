@@ -35,23 +35,22 @@
 
         <com.google.android.material.tabs.TabLayout
 
-            android:id="@+id/tabLayoutBlog"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_alignBottom="@id/parent1"
+            android:id="@+id/tabLayoutBlog"
+            app:tabIndicatorColor="@color/backRed"
+            app:tabIndicatorHeight="5dp"
             android:background="#FFFFFF"
             app:tabGravity="fill"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabIndicatorHeight="2dp"
-            app:tabMode="fixed">
-
+            app:tabMode="fixed"
+            android:layout_alignBottom="@id/parent1">
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/myBlogsTab"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/my"
                 android:textAlignment="center"
-                 />
+                />
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/allBlogsTab"
                 android:layout_width="wrap_content"
@@ -67,14 +66,19 @@
                 android:textAlignment="center"
                 />
         </com.google.android.material.tabs.TabLayout>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            app:rippleColor="@color/colorPrimary"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginBottom="-10dp"
             android:layout_above="@id/tabLayoutBlog"
             android:layout_alignEnd="@id/parent1"
-            />
+            android:layout_marginBottom="-10dp"
+            android:pointerIcon="arrow"
+            android:src="@drawable/feathersicon"
+            app:borderWidth="0.8dp"
+            app:fabSize="normal"
+            app:maxImageSize="50dp"
+            app:rippleColor="@color/colorPrimary" />
 
 
     </RelativeLayout>

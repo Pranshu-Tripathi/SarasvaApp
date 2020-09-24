@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Dialog;
 import android.content.ContentResolver;
@@ -27,6 +28,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -47,6 +50,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class BlogingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private FirebaseAuth firebaseAuth;
+    private TabLayout tabLayout;
+    private TabItem myItem,allItem,starredItem;
+    private ViewPager viewPager;
+    private EventPagerAdaptor eventPagerAdaptor;
     private FirebaseUser firebaseUser;
     private DatabaseReference reference;
     private Dialog dialog;
@@ -158,6 +165,48 @@ public class BlogingActivity extends AppCompatActivity implements NavigationView
                 }
             }
         });
+
+        tabLayout = (TabLayout) findViewById(R.id.tabLayoutBlog);
+        myItem = findViewById(R.id.myBlogsTab);
+        allItem = findViewById(R.id.allBlogsTab);
+        starredItem = findViewById(R.id.starredBlogTabs);
+        viewPager = (ViewPager) findViewById(R.id.viewPagerBlog);
+
+        PagerAdapterBlogs pagerAdapterBlogs = new PagerAdapterBlogs(getSupportFragmentManager(),tabLayout.getTabCount());
+
+        viewPager.setAdapter(pagerAdapterBlogs);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition(),true);
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+
+//        eventPagerAdaptor.AddFragment(new AllFragment(),"About");
+//        eventPagerAdaptor.AddFragment(new GalleryFragment(),"Gallery");
+//        eventPagerAdaptor.AddFragment(new RegisterFragment(),"Register");
+//        viewPager.setAdapter(eventPagerAdaptor);
+//        tabLayout.setupWithViewPager(viewPager);
+//
+//        tabLayout.getTabAt(0).setIcon(R.drawable.ic_info_outline_black_24dp);
+//        tabLayout.getTabAt(0).setText("About");
+//        tabLayout.getTabAt(1).setIcon(R.drawable.ic_browser);
+//        tabLayout.getTabAt(1).setText("Gallery");
+//        tabLayout.getTabAt(2).setIcon(R.drawable.ic_cash_register);
+//        tabLayout.getTabAt(2).setText("Register");
 
     }
 
